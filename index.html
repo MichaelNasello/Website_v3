@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset = "UTF-8">
+    <meta name = "keywords" content = "Michael, Nasello, Waterloo, Engineering, University of Waterloo,">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <meta name = "author" content = "Michael Nasello">
+    <meta name = "description" content = "On this page, you can find details about me, my work experience, and some of
+        the projects I've completed or am currently working on.">
+
+    <title>Michael Nasello</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <style>
+
+        body {
+            background: url('images/background.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+
+        img {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+
+        .tab-pane {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .bg-cover {
+            background-attachment: static;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .site-footer {
+            background-color:#26272b;
+            padding:45px 0 20px;
+            font-size:15px;
+            line-height:24px;
+            color:#737373;
+        }
+
+        .site-footer hr {
+            border-top-color:#bbb;
+            opacity:0.5
+        }
+
+        .site-footer hr.small {
+            margin:20px 0
+        }
+
+        .site-footer h6 {
+            color:#fff;
+            font-size:16px;
+            text-transform:uppercase;
+            margin-top:5px;
+            letter-spacing:2px
+        }
+
+        .site-footer a {
+            color:#737373;
+        }
+
+        .site-footer a:hover {
+            color:#3366cc;
+            text-decoration:none;
+        }
+
+        .footer-links {
+            padding-left:0;
+            list-style:none
+        }
+
+        .footer-links li {
+            display:block
+        }
+
+        .footer-links a {
+            color:#737373
+        }
+
+        .footer-links a:active,.footer-links a:focus,.footer-links a:hover {
+            color:#3366cc;
+            text-decoration:none;
+        }
+
+        .footer-links.inline li {
+            display:inline-block
+        }
+
+        .site-footer .social-icons {
+            text-align:right
+        }
+
+        .site-footer .social-icons a {
+            width:40px;
+            height:40px;
+            line-height:40px;
+            margin-left:6px;
+            margin-right:0;
+            border-radius:100%;
+            background-color:#33353d
+        }
+        .copyright-text {
+            margin:0
+        }
+
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom:30px
+            }
+        }
+
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom:0
+            }
+
+            .site-footer .copyright-text,.site-footer .social-icons {
+                text-align:center
+            }
+        }
+
+        .social-icons {
+            padding-left:0;
+            margin-bottom:0;
+            list-style:none
+        }
+
+        .social-icons li {
+            display:inline-block;
+            margin-bottom:4px
+        }
+
+        .social-icons li.title {
+            margin-right:15px;
+            text-transform:uppercase;
+            color:#96a2b2;
+            font-weight:700;
+            font-size:13px
+        }
+
+        .social-icons a {
+            background-color:#eceeef;
+            color:#818a91;
+            font-size:16px;
+            display:inline-block;
+            line-height:44px;
+            width:44px;
+            height:44px;
+            text-align:center;
+            margin-right:8px;
+            border-radius:100%;
+            -webkit-transition:all .2s linear;
+            -o-transition:all .2s linear;
+            transition:all .2s linear
+        }
+
+        .social-icons a:active,.social-icons a:focus,.social-icons a:hover {
+            color:#fff;
+            background-color:#29aafe
+        }
+
+        .social-icons.size-sm a {
+            line-height:34px;
+            height:34px;
+            width:34px;
+            font-size:14px
+        }
+
+        .social-icons a.facebook:hover {
+            background-color:#3b5998
+        }
+
+        .social-icons a.twitter:hover {
+            background-color:#00aced
+        }
+
+        .social-icons a.linkedin:hover {
+            background-color:#007bb6
+        }
+
+        .social-icons a.dribbble:hover {
+            background-color:#ea4c89
+        }
+
+        @media (max-width:767px) {
+
+            .social-icons li.title {
+                display:block;
+                margin-right:0;
+                font-weight:600
+            }
+        }
+
+        #back2Top {
+            color: red;
+            width: 60px;
+            line-height: 60px;
+            overflow: hidden;
+            z-index: 999;
+            display: none;
+            cursor: pointer;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            text-align: center;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        #back2Top:hover {
+            background-color: #DDF;
+            color: #000;
+        }
+
+        @media (max-width:767px) {
+
+            #body-id {
+                padding: 10px;
+            }
+
+            #about-me {
+                padding: 0px;
+            }
+
+            #jumbo {
+                padding: 0px;
+            }
+
+            h4 img {
+                display: none;
+            }
+
+            #spacer {
+                display: none;
+            }
+
+            #back2Top {
+                right: 5px
+            }
+        }
+
+    </style>
+
+</head>
+
+<nav class = "navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow" id = "home">
+    <div class = "container">
+        <a class = "navbar-brand" href = "#home">
+            Michael Nasello &nbsp &nbsp
+            <img style = "width: 30px" src = "images/icon.png">
+        </a>
+
+        <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarResponsive"
+                aria-controls = "navbarResponsive" aria-expanded = "false" aria-label = "Toggle navigation">
+            <span class = "navbar-toggler-icon"></span>
+        </button>
+        <div class = "collapse navbar-collapse" id = "navbarResponsive">
+            <ul class = "navbar-nav ml-auto">
+                <li class = "nav-item active">
+                    <a class = "nav-link" href = "#home">Home
+                        <span class = "sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "#about-me">About Me</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "#work-experience">Work Experience</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "#projects">Projects</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "#featured-work">Featured Work</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<a id="back2Top" title="Back to top" href="#"><i class = "fa fa-chevron-circle-up"></i></a>
+<script>
+    $(window).scroll(function() {
+        var height = $(window).scrollTop();
+        if (height > 100) {
+            $('#back2Top').fadeIn();
+        } else {
+            $('#back2Top').fadeOut();
+        }
+    });
+    $(document).ready(function() {
+        $("#back2Top").click(function(event) {
+            event.preventDefault();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+    });
+</script>
+
+<body>
+
+    <div class = "container" id = "body-id">
+
+        <div class = "card border-0 shadow my-5">
+            <div id = "about-me" class = "card-body p-5">
+
+
+
+                <div class="container" id = "jumbo">
+                    <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://placeimg.com/1000/480/nature)">
+                        <div class="container">
+
+                            <h1 class="display-4">Michael Nasello</h1>
+                            <p class="lead">Welcome to my website! On this page, you can find details about me, my work experience, and some of my projects.</p>
+                            <hr class="my-4" style = "border-color: white">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <ul class="social-icons">
+                                            <li><a class="linkedin" href="https://www.linkedin.com/in/michael-nasello" target = "_blank"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a class="facebook" href="https://github.com/MichaelNasello" target = "_blank"><i class="fa fa-github"></i></a></li>
+                                            <li><a class="twitter" href="mailto:mlnasell@edu.uwaterloo.ca"><i class="fa fa-at"></i></a></li>
+                                            <li><a class="dribbble" href="https://drive.google.com/open?id=1oScBNeyEuKXIX5FqIq0hdXf17sW3vygC" target = "_blank"><i class="fa fa-file"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <h3 class = "font-weight-light" style = "padding: 0px">About Me</h3>
+                <hr>
+                <p>
+                    I am an individual with a passion for learning. To me, nothing is more exciting than struggling
+                    through a problem and finding that breakthrough solution. While studying Mechatronics Engineering
+                    at the University of Waterloo, I have been presented with countless opportunities to do so.
+                    Collaborations with classmates has led to my introduction to several interesting areas, including
+                    Web Development, Computer Vision, and Machine Learning.
+
+                    <br><br>
+
+                    Outside of the classroom, I use my time to
+                    develop skills in these areas. Machine Learning is a field in which I have spent a significant
+                    amount of time. From watching video lectures, reading articles, and learning the mathematics behind
+                    model training, I have become competent in the area and an active practitioner.
+
+                    <br><br>
+
+                    When I'm not in
+                    class nor working on a side project, I enjoy going to the gym, going on runs, and playing several
+                    sports recreationally (golf, tennis, soccer).
+                </p>
+
+                <h3 id = "work-experience" class = "font-weight-light">Work Experience</h3>
+                <hr>
+
+                <ul class = "nav nav-pills mb-3" id = "pills-tab" role = "tablist">
+
+                    <li class = "nav-item">
+                        <a class = "nav-link active" id = "pills-nrc-tab" data-toggle = "pill" href = "#pills-nrc" role = "tab" aria-controls = "pills-nrc" aria-selected = "true">National Research Council Canada</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" id = "pills-vista-tab" data-toggle = "pill" href = "#pills-vista" role = "tab" aria-controls = "pills-vista" aria-selected = "false">Vista Solutions</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-nrc" role="tabpanel" aria-labelledby="pills-nrc">
+
+                        <br>
+
+                        <h4>Machine Learning Developer, Data Scientist &nbsp; <img style = "width: 50px" src = "images/canada-flag.png"></h4>
+
+                        <br>
+
+                        During my time at the NRC, I worked on a project that forecasts sea-ice presence in several
+                        large Canadian bodies of water. The model incorporates ConvLSTM's and the SIF-Net RNN
+                        architecture. It takes as input bitmaps of several environmental conditions (current sea-ice
+                        presence, temperature, windspeed, etc.), and outputs predictions for sea-ice presence.
+
+                        <br><br>
+
+                        My contributions included adding to the existing model training pipeline and deploying final
+                        products to AWS. I spent time conducting rigorous experimentation with model architecture and
+                        hyper-parameters to maximize performance. I wrote code for the deployment of the project to
+                        AWS; using Fargate, ice presence forecasts are generated each day and available for view on a
+                        static webpage I developed.
+
+                        <br><br>
+
+                        I wrote a work term report, summarizing my contributions; this report is available via the
+                        link provided.
+
+                        <br><br>
+
+                        <a href = "https://drive.google.com/file/d/1pU03hzEkUWYcNdCPgHg8C1bKGum3yEpT/view" target = "_blank">
+                            <button class = "btn btn-secondary">
+                                Work Term Report
+                            </button>
+                        </a>
+
+                        <br><br>
+
+                        <a href = "http://nrc-sifnet-bucket.s3-website-us-east-1.amazonaws.com/" target = "_blank">
+                            <button class = "btn btn-secondary">
+                                NRC Website
+                            </button>
+                        </a>
+
+                        <br><br>
+
+                        Employer Evaluation: "Excellent"
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-vista" role="tabpanel" aria-labelledby="pills-vista">
+
+                        <br>
+
+                        <h4>Machine Vision Support Engineer &nbsp; <img style = "width: 50px" src = "images/vista-logo.png"></h4>
+
+                        <br>
+
+                        As a Machine Vision Support Engineer at Vista, I was responsible for developing Machine Learning
+                        solutions for projects where traditional methods of Machine Vision could not perform at the
+                        level required by the client. I worked on several projects during my co-op. I spent most of my
+                        time carrying an Object Detection project to completion.
+
+                        <br><br>
+
+                        I was also responsible for training Vista Engineers and providing an introduction to Neural
+                        Networks. I delivered a webinar presentation that introduced general structure of Neural
+                        Networks, the mathematics behind model training, and how these concepts can be implemented
+                        into their custom applications.
+
+                        <br><br>
+
+                        I on-boarded Vista Employees with my work, prior to my departure, and trained the incoming
+                        co-op student. I was requested for continual support related to Vista's Machine Learning
+                        projects.
+
+                        <br><br>
+
+                        Employer Evaluation: "Excellent"
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <h3 id = "projects" class = "font-weight-light">Projects</h3>
+                <hr>
+
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="images/cartpole-project.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Reinforcement Learning with CartPole</h5>
+                                <p class="card-text">
+
+                                    The goal of this project was to stand the pole upright for as long as possible; a
+                                    traditional controls problem, but with the twist of using a Reinforcement Learning
+                                    approach. Through the use of OpenAI Gym's environment, I am given control of the cart.
+                                    The cart can move either left or right. My task was to determine, given a 4D vector
+                                    [Position, Velocity, Angle, Angular Velocity], the action that will maximize the
+                                    probability that the pole does not fall over, both in short and long term.
+
+                                    <br><br>
+
+                                    Below you can access my Github Repo and the documentation for OpenAI Gym
+
+                                    <br><br>
+
+                                    <a href = "https://github.com/MichaelNasello/CartPole_Balance" target = "_blank">
+                                        <button class = "btn btn-secondary">
+                                            GitHub Repository
+                                        </button>
+                                    </a>
+
+                                    <br><br>
+
+                                    <a href = "https://gym.openai.com/" target = "_blank">
+                                        <button class = "btn btn-secondary">
+                                            Open AI
+                                        </button>
+                                    </a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="images/website-v1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Personal Website v1</h5>
+                                <p class="card-text">
+                                    I developed a webpage written in virtually only HTML and CSS. No framework was used
+                                    to help with the design of the page.
+
+                                    <br><br>
+
+                                    The website is still available via the link below.
+
+                                    <br><br>
+
+                                    <a href = "http://michaelnasello-old-website.ca.s3-website.ca-central-1.amazonaws.com/home" target = "_blank">
+                                        <button class = "btn btn-secondary">
+                                            Open AI
+                                        </button>
+                                    </a>
+
+                                    <div style = "height: 225px" id = "spacer"></div>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-4" style = "margin: 0 auto; float: none; margin-bottom: 10px;">
+                        <div class="card">
+                            <img src="images/cornerstone-project.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Mechatronics Cornerstone Project</h5>
+                                <p class="card-text">
+                                    This was a first-year, first-term design project for all Mechatronics Engineering
+                                    students at the University of Waterloo. It was an open-ended project. We were given
+                                    a lego set and an EV3 controller. Monitoring/defending personal space was the task
+                                    we chose.
+
+                                    <br><br>
+
+                                    The final product surveyed an area and fired projectiles at approaching
+                                    objects. Chassis composed of lego; source code written in RobotC. During the closing
+                                    phase of the project, we produced a final report that summarized project scope,
+                                    constraints and criteria, mechanical and software design and methods of testing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 id = "featured-work" class = "font-weight-light">Featured Work</h3>
+                <hr>
+
+                <div class="accordion" id="accordionExample">
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Reinforcement Learning with CartPole
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body" style = "background-color: #616D7E;  color: #fff">
+
+                                <h3>Problem</h3>
+
+                                The goal of this project was to develop a policy the CartPole can follow so that it stands upright. At each
+                                time step, OpenAI Gym provides the cart's position, angle, velocity, and angular velocity. It is our
+                                job to use this information to determine what action should be taken that will maximize the
+                                probability that the CartPole remains standing upright. Possible actions are moving left or right.
+
+                                <h3>Approach</h3>
+
+                                <p>
+                                    Reinforcement Learning was used to solve this problem. This concept is synonymous to
+                                    positive/negative reinforcements in real life:
+                                </p>
+                                <p>
+                                    <i>If a dog behaves, they receive a treat; if they misbehave, you put them in their cage.
+                                         After time, the dog figures out what is considered good/bad behaviour
+                                        based off of the consequences.
+                                    </i>
+                                </p>
+
+                                <p>
+                                    This approach can be used to our advantage when training AI. The reinforcement learning application
+                                    consists of four entities:
+                                </p>
+                                <ol>
+                                    <li>The environment (OpenAI Gym / Your house)</li>
+                                    <li>The agent (CartPole / The dog)</li>
+                                    <li>The action space (Move left or right / Behave or misbehave)</li>
+                                    <li>The reward (Number / Give treat or put in cage)</li>
+                                </ol>
+
+                                <p>
+                                    The approach for solving this problem is the following: train the CartPole to take actions that
+                                    maximize its reward.
+                                </p>
+
+                                <h4>How is the network trained?</h4>
+
+                                <p>
+                                    For a given state, it is the network's job to output a vector of probabilities for taking each
+                                    action in the action space. When training, we attempt to minimize the difference between that output
+                                    and the action that maximizes rewards.
+                                </p>
+
+                                <p>
+                                    For example, if the CartPole is currently travelling to the left, it is preferable to
+                                    reverse that movement and begin travelling to the right. Thus, a desired output from the model is [0, 1]
+                                    ([Going left, Going right]). A network without training won't necessarily generate that output.
+                                    The optimizer's job is to adjust the network so that the vector approaches [0, 1] when the CartPole
+                                    is moving left.
+                                </p>
+
+                                <br>
+
+                                <img class = "card-img-top img-responsive" src = "images/RLModel.png" style = "width: 40%; display: block; margin: 10px auto 20px">
+
+                                <br>
+
+                                <h4>So our loss function attempts to minimize that difference. How are rewards used?</h4>
+
+                                <p>
+                                    We multiply our gradients by the rewards. When performing Back Propagation, positive rewards
+                                    (agent did something right) will cause the optimizer to descend down the gradient. The
+                                    opposite is true for negative rewards (agent did something wrong). This process has the effect of
+                                    'learning' what the appropriate actions to take are, given a state from the environment.
+                                </p>
+                                <h4>The Credit Assignment Problem</h4>
+
+                                <p>
+                                    There is a fundamental problem with how rewards are calculated: how does the agent know if
+                                    falling at t = 100 was caused by an action at t = 98 or t = 17? This is known as the 'Credit
+                                    Assignment Problem'.
+                                </p>
+                                <p>
+                                    To solve this problem, we apply a discount rate to our rewards. For each time step:
+                                </p>
+                                <p>
+                                    <i>
+                                        Discounted Reward [t = t] = Reward [t = t] * pow(discount_rate, 0) + ... + Reward [t = t + n]
+                                        * pow(discount_rate, n)
+                                    </i>
+                                </p>
+                                <p>
+                                    Note: discount_rate belongs to (0, 1)
+                                </p>
+                                <p>
+                                    What does this accomplish? This decreases the impact that a future reward has on the current time
+                                    step. Using discounted rewards, the agent, over many games, is able to 'learn' what actions,
+                                    given a corresponding input from the environment, are beneficial.
+                                </p>
+
+                                <h3>Model</h3>
+
+                                <p>
+                                    The tf.keras API was leveraged for the formulation of models. Each model architecture developed
+                                    consisted of a series of fully-connected layers. Dropout was used for the final design; this
+                                    design performed the best during testing.
+                                </p>
+                                <p>
+                                    The final design, model_v5, consisted of the following:
+                                </p>
+                                <i>
+                                    Dense(32) <span>&rarr;</span>
+                                    Dropout <span>&rarr;</span>
+                                    Dense(32) <span>&rarr;</span>
+                                    Dropout <span>&rarr;</span>
+                                    Dense(32) <span>&rarr;</span>
+                                    Dropout <span>&rarr;</span>
+                                    Dense(32) <span>&rarr;</span>
+                                    Dropout <span>&rarr;</span>
+                                    Dense(32) <span>&rarr;</span>
+                                    Dense(2) <span>&rarr;</span>
+                                    Softmax
+                                </i>
+
+                                <h3>Results</h3>
+
+                                <p>
+                                    After 5 iterations of the model architecture, a policy model was trained that converged and
+                                    was able to survive in the environment. The program was manually
+                                    stopped at 15,000 steps (about 5 minutes). It took 900 episodes of training to reach this point.
+                                    Below is a video showing the agent's progress throughout the training loop.
+                                </p>
+
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="videos/Training of Policy Model.mp4"></iframe>
+                                </div>
+
+                                <br>
+
+                                <h3>Acknowledgements</h3>
+
+                                <p>
+                                    Three resources were used to help me as I learned about Reinforcement Learning:
+                                </p>
+                                <ol>
+                                    <li>I was introduced to the idea while completing Jose Portilla's
+                                        <a style = "color: black" href = "https://www.udemy.com/course/complete-guide-to-tensorflow-for-deep-learning-with-python/" target = "_blank">
+                                            Complete Guide to TensorFlow for Deep Learning with Python
+                                        </a> course on Udemy.
+                                    </li>
+                                    <li>
+                                        Much of the implementation for this project was inspired by this
+                                        <a style = "color: black" href="https://medium.com/@hamza.emra/reinforcement-learning-with-tensorflow-2-0-cca33fead626" target = "_blank">
+                                            Medium post.
+                                        </a>
+                                    </li>
+                                    <li>
+                                        This
+                                        <a style = "color: black" href="https://medium.com/deep-math-machine-learning-ai/ch-13-deep-reinforcement-learning-deep-q-learning-and-policy-gradients-towards-agi-a2a0b611617e" target = "_blank">
+                                            Medium post
+                                        </a>
+                                        provided much of the necessary background and understanding for this
+                                        project.
+                                    </li>
+                                </ol>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Handwritten Digit Classifier
+                                </button>
+                            </h2>
+                        </div>
+
+
+                        <div id="collapseTwo" class = "collapse" aria-labelledby="headingTwo" data-parent = "#accordionExample" style = "padding: 5px; padding-left: 10px; background-color: #616D7E;  color: #fff">
+                            <p>
+                                <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
+
+                                <h3>Problem</h3>
+
+                                The goal is to correctly classify a single handwritten digit given an arbitrary image.
+                                To test out the performance of my model, click on the link below.
+
+                                <br><br>
+
+                                <a href = "Handwritten_Digit_Recognition.html" target = "_blank">
+                                    <button class = "btn btn-light">
+                                        Try it Out
+                                    </button>
+                                </a>
+
+                                <br><br>
+
+                                <h3>Approach</h3>
+
+                                <div class = "row" style = "padding: 5px; padding-left: 10px">
+                                    <div class = "col-md-6">
+                                        <p>
+                                            Machine Learning was used to solve this problem. Using the tf.keras API, a Convolutional
+                                            Neural Network was trained on the MNIST dataset. The following model architecture was
+                                            used.
+
+                                            <br>
+                                            <br>
+
+                                            Thanks to Google, I was able to train on a state-of-the-art TPU (Tensor Processing Unit)
+                                            through their free cloud service: Google Colab. On the MNIST dataset, I reached a
+                                            validation accuracy of approximately 99.2%.
+
+                                            <br>
+                                            <br>
+
+                                            It is important to note that the
+                                            numbers of the MNIST dataset are written in pen, while we are using an HTML
+                                            canvas to draw our numbers; this could slightly impact model performance.
+                                        </p>
+                                    </div>
+                                    <div class = "col-md-6">
+                                        <img src = "images/model.png" class = "card-img-top img-responsive" style = "margin-left: auto; margin-right: auto">
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <h3 id = "contact" class = "font-weight-light">Contact</h3>
+                <hr>
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-12 col-md-6">
+                                <h6>Contact Me</h6>
+                                <p>
+                                    If you have any questions about Machine Learning, Web Development, or the
+                                    Engineering Program at the University of Waterloo, don't hesitate to reach out to
+                                    me.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-6 col-md-3">
+                                <h6>Quick Links</h6>
+                                <ul class="footer-links">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about-me">About Me</a></li>
+                                    <li><a href="#work-experience">Work Experience</a></li>
+                                    <li><a href="#projects">Projects</a></li>
+                                    <li><a href="#featured-work">Featured Work</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-6 col-md-3">
+                                <img src = "images/icon.png" style = "width: 100px">
+                            </div>
+
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                <p class="copyright-text">
+                                    Copyright &copy; 2020 All Rights Reserved by Michael Nasello.
+                                </p>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <ul class="social-icons">
+                                    <li><a class="linkedin" href="https://www.linkedin.com/in/michael-nasello" target = "_blank"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a class="facebook" href="https://github.com/MichaelNasello" target = "_blank"><i class="fa fa-github"></i></a></li>
+                                    <li><a class="twitter" href="mailto:mlnasell@edu.uwaterloo.ca"><i class="fa fa-at"></i></a></li>
+                                    <li><a class="dribbble" href="https://drive.google.com/open?id=1oScBNeyEuKXIX5FqIq0hdXf17sW3vygC" target = "_blank"><i class="fa fa-file"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
