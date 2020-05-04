@@ -227,8 +227,9 @@
         }
 
         #back2Top:hover {
-            background-color: #DDF;
+            background-color: #eee;
             color: #000;
+            border-radius: 20px;
         }
 
         @media (max-width:767px) {
@@ -255,6 +256,55 @@
 
             #back2Top {
                 right: 5px
+            }
+
+            #space1, #space2, #space3, #space4 {
+                display: block;
+            }
+
+            #spacer2 {
+                display: none;
+            }
+
+            .social-icons a {
+                width:30px;
+                height:30px;
+            }
+
+            #canada-flag-default {
+                display: none;
+            }
+
+            #canada-flag {
+                display: block;
+                margin: 20px;
+                margin-left: 0px;
+            }
+
+            #vista-icon-default {
+                display: none;
+            }
+
+            #vista-icon {
+                display: block;
+                margin: 20px;
+                margin-left: 0px;
+            }
+
+        }
+
+        @media (min-width:900px) {
+
+            #space1, #space2, #space3, #space4 {
+                display: none;
+            }
+
+            #canada-flag {
+                display: none;
+            }
+
+            #vista-icon {
+                display: none;
             }
         }
 
@@ -301,6 +351,7 @@
 </nav>
 
 <a id="back2Top" title="Back to top" href="#"><i class = "fa fa-chevron-circle-up"></i></a>
+
 <script>
     $(window).scroll(function() {
         var height = $(window).scrollTop();
@@ -334,7 +385,7 @@
                         <div class="container">
 
                             <h1 class="display-4">Michael Nasello</h1>
-                            <p class="lead">Welcome to my website! On this page, you can find details about me, my work experience, and some of my projects.</p>
+                            <p class="lead">Welcome to my website! Here I share details about me, my work experience, and some of my projects.</p>
                             <hr class="my-4" style = "border-color: white">
 
                             <div class="container">
@@ -399,9 +450,11 @@
 
                         <br>
 
-                        <h4>Machine Learning Developer, Data Scientist &nbsp; <img style = "width: 50px" src = "images/canada-flag.png"></h4>
+                        <h4>Machine Learning Developer, Data Scientist &nbsp;<img id = "canada-flag-default" style = "width: 50px" src = "images/canada-flag.png"> </h4>
 
-                        <br>
+                        <img id = "canada-flag" style = "width: 50px" src = "images/canada-flag.png">
+
+                        <p class="card-text"><small class="text-muted">January 2020 - April 2020 <i class = "fa fa-at"></i> Ottawa, ON</small></p>
 
                         During my time at the NRC, I worked on a project that forecasts sea-ice presence in several
                         large Canadian bodies of water. The model incorporates ConvLSTM's and the SIF-Net RNN
@@ -423,19 +476,21 @@
 
                         <br><br>
 
+
                         <a href = "https://drive.google.com/file/d/1pU03hzEkUWYcNdCPgHg8C1bKGum3yEpT/view" target = "_blank">
-                            <button class = "btn btn-secondary">
+                            <button class = "btn btn-secondary" style = "padding-top: 10px">
                                 Work Term Report
                             </button>
                         </a>
 
-                        <br><br>
+                        <br id = "space1"><br id = "space2">
 
                         <a href = "http://nrc-sifnet-bucket.s3-website-us-east-1.amazonaws.com/" target = "_blank">
-                            <button class = "btn btn-secondary">
+                            <button class = "btn btn-secondary" style = "padding-top: 10px">
                                 NRC Website
                             </button>
                         </a>
+
 
                         <br><br>
 
@@ -447,9 +502,11 @@
 
                         <br>
 
-                        <h4>Machine Vision Support Engineer &nbsp; <img style = "width: 50px" src = "images/vista-logo.png"></h4>
+                        <h4>Machine Vision Support Engineer &nbsp;<img id = "vista-icon-default" style = "width: 50px" src = "images/vista-logo.png"></h4>
 
-                        <br>
+                        <img id = "vista-icon" style = "width: 50px" src = "images/vista-logo.png">
+
+                         <p class="card-text"><small class="text-muted">April 2019 - August 2019 <i class = "fa fa-at"></i> Windsor, ON</small></p>
 
                         As a Machine Vision Support Engineer at Vista, I was responsible for developing Machine Learning
                         solutions for projects where traditional methods of Machine Vision could not perform at the
@@ -483,6 +540,46 @@
                 <hr>
 
                 <div class="row row-cols-1 row-cols-md-2">
+
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="images/NRC_SIFNET.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Deployment of Sifnet ML Model</h5>
+                                <p class="card-text">
+
+                                    When working at the NRC, I was asked to develop a method by which end-users could
+                                    access final products. Ice presence forecasts needed to be generated daily
+                                    and available for download. I pioneered and finished the complete deployment
+                                    pipeline of the project.
+
+                                    <br><br>
+
+                                    Using docker, I containerized the application and pushed
+                                    the image to AWS. I then leveraged the flexibility of
+
+                                    <a href = "https://aws.amazon.com/fargate/" target = "_blank">AWS Fargate</a>;
+
+                                    scheduled tasks run daily and products are automatically uploaded to AWS s3. A
+                                    website was created to show products and the accuracy of our models.
+
+                                    <br><br>
+
+                                    Below you can access the website I created to view and download final products.
+
+                                    <br><br>
+
+                                    <a href = "http://nrc-sifnet-bucket.s3-website-us-east-1.amazonaws.com/" target = "_blank">
+                                        <button class = "btn btn-secondary">
+                                            NRC Website
+                                        </button>
+                                    </a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col mb-4">
                         <div class="card">
                             <img src="images/cartpole-project.jpg" class="card-img-top" alt="...">
@@ -499,7 +596,7 @@
 
                                     <br><br>
 
-                                    Below you can access my Github Repo and the documentation for OpenAI Gym
+                                    Below you can access my Github Repo and the documentation for OpenAI Gym.
 
                                     <br><br>
 
@@ -509,13 +606,15 @@
                                         </button>
                                     </a>
 
-                                    <br><br>
+                                    <br id = "space3"><br id = "space4">
 
                                     <a href = "https://gym.openai.com/" target = "_blank">
                                         <button class = "btn btn-secondary">
                                             Open AI
                                         </button>
                                     </a>
+
+                                    <div style = "height: 10px" id = "spacer2"></div>
 
                                 </p>
                             </div>
@@ -543,7 +642,7 @@
                                         </button>
                                     </a>
 
-                                    <div style = "height: 225px" id = "spacer"></div>
+                                    <div style = "height: 75px" id = "spacer"></div>
 
                                 </p>
                             </div>
