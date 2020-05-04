@@ -128,16 +128,6 @@
             }
         }
 
-        @media (max-width:767px) {
-            .site-footer {
-                padding-bottom:0
-            }
-
-            .site-footer .copyright-text,.site-footer .social-icons {
-                text-align:center
-            }
-        }
-
         .social-icons {
             padding-left:0;
             margin-bottom:0;
@@ -201,14 +191,6 @@
             background-color:#ea4c89
         }
 
-        @media (max-width:767px) {
-
-            .social-icons li.title {
-                display:block;
-                margin-right:0;
-                font-weight:600
-            }
-        }
 
         #back2Top {
             color: red;
@@ -234,6 +216,20 @@
 
         @media (max-width:767px) {
 
+            .site-footer {
+                padding-bottom:0
+            }
+
+            .site-footer .copyright-text,.site-footer .social-icons {
+                text-align:center
+            }
+
+            .social-icons li.title {
+                display:block;
+                margin-right:0;
+                font-weight:600
+            }
+
             #body-id {
                 padding: 10px;
             }
@@ -247,10 +243,6 @@
             }
 
             h4 img {
-                display: none;
-            }
-
-            #spacer {
                 display: none;
             }
 
@@ -291,6 +283,11 @@
                 margin-left: 0px;
             }
 
+            .card-block {
+                margin-right: 450px;
+                width: 105%;
+            }
+
         }
 
         @media (min-width:900px) {
@@ -301,7 +298,7 @@
 
         }
 
-        @media (min-width: 767px) {
+        @media (min-width: 768px) {
 
             #canada-flag {
                 display: none;
@@ -310,6 +307,33 @@
             #vista-icon {
                 display: none;
             }
+
+            .card-block {
+                height: 100%;
+                min-height: 1000px;
+            }
+
+            #space3, #space4 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 414px) {
+
+            .card-block {
+                height: 100%;
+                min-height: 1000px
+            }
+
+        }
+
+        .card-block {
+            min-height: 800px;
+        }
+
+        .card-block {
+            width: 100%;
+            margin-right: 500px;
         }
 
     </style>
@@ -461,7 +485,8 @@
                         <p class="card-text"><small class="text-muted">January 2020 - April 2020 <i class = "fa fa-at"></i> Ottawa, ON</small></p>
 
                         During my time at the NRC, I worked on a project that forecasts sea-ice presence in several
-                        large Canadian bodies of water. The model incorporates ConvLSTM's and the SIF-Net RNN
+                        large Canadian bodies of water. The model incorporates
+                        <a href = "https://arxiv.org/abs/1506.04214" target = "_blank">ConvLSTMs</a> and the SIF-Net RNN
                         architecture. It takes as input bitmaps of several environmental conditions (current sea-ice
                         presence, temperature, windspeed, etc.), and outputs predictions for sea-ice presence.
 
@@ -470,7 +495,8 @@
                         My contributions included adding to the existing model training pipeline and deploying final
                         products to AWS. I spent time conducting rigorous experimentation with model architecture and
                         hyper-parameters to maximize performance. I wrote code for the deployment of the project to
-                        AWS; using Fargate, ice presence forecasts are generated each day and available for view on a
+                        AWS; using <a href = "https://aws.amazon.com/fargate/" target = "_blank">Fargate</a>, ice
+                        presence forecasts are generated each day and available for view on a
                         static webpage I developed.
 
                         <br><br>
@@ -543,139 +569,148 @@
                 <h3 id = "projects" class = "font-weight-light">Projects</h3>
                 <hr>
 
-                <div class="row row-cols-1 row-cols-md-2">
+                <div class="container-fluid">
+                    <div class="row flex-nowrap d-flex flex-row flex-nowrap overflow-auto">
 
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="images/NRC_SIFNET.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Deployment of Sifnet ML Model</h5>
-                                <p class="card-text">
+                        <div class="col-lg-8">
+                            <div class="card card-block">
 
-                                    When working at the NRC, I was asked to develop a method by which end-users could
-                                    access final products. Ice presence forecasts needed to be generated daily
-                                    and available for download. I pioneered and finished the complete deployment
-                                    pipeline of the project.
+                                <img src="images/NRC_SIFNET.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Deployment of Sifnet ML Model</h5>
+                                    <p class="card-text">
 
-                                    <br><br>
+                                        When working at the NRC, I was asked to develop a method by which end-users could
+                                        access final products. Ice presence forecasts needed to be generated daily
+                                        and available for download. I pioneered and finished the complete deployment
+                                        pipeline of the project.
 
-                                    Using docker, I containerized the application and pushed
-                                    the image to AWS. I then leveraged the flexibility of
+                                        <br><br>
 
-                                    <a href = "https://aws.amazon.com/fargate/" target = "_blank">AWS Fargate</a>;
+                                        Using docker, I containerized the application and pushed
+                                        the image to AWS. I then leveraged the flexibility of
 
-                                    scheduled tasks run daily and products are automatically uploaded to AWS s3. A
-                                    website was created to show products and the accuracy of our models.
+                                        <a href = "https://aws.amazon.com/fargate/" target = "_blank">AWS Fargate</a>;
 
-                                    <br><br>
+                                        scheduled tasks run daily and products are automatically uploaded to AWS s3. A
+                                        website was created to show products and the accuracy of our models.
 
-                                    Below you can access the website I created to view and download final products.
+                                        <br><br>
 
-                                    <br><br>
+                                        Below you can access the website I created to view and download final products.
 
-                                    <a href = "http://nrc-sifnet-bucket.s3-website-us-east-1.amazonaws.com/" target = "_blank">
-                                        <button class = "btn btn-secondary">
-                                            NRC Website
-                                        </button>
-                                    </a>
+                                        <br><br>
 
-                                </p>
+                                        <a href = "http://nrc-sifnet-bucket.s3-website-us-east-1.amazonaws.com/" target = "_blank">
+                                            <button class = "btn btn-secondary">
+                                                NRC Website
+                                            </button>
+                                        </a>
+
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="images/cartpole-project.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Reinforcement Learning with CartPole</h5>
-                                <p class="card-text">
+                        <div class="col-lg-8">
+                            <div class="card card-block">
 
-                                    The goal of this project was to stand the pole upright for as long as possible; a
-                                    traditional controls problem, but with the twist of using a Reinforcement Learning
-                                    approach. Through the use of OpenAI Gym's environment, I am given control of the cart.
-                                    The cart can move either left or right. My task was to determine, given a 4D vector
-                                    [Position, Velocity, Angle, Angular Velocity], the action that will maximize the
-                                    probability that the pole does not fall over, both in short and long term.
+                                <img src="images/cartpole-project.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Reinforcement Learning with CartPole</h5>
+                                    <p class="card-text">
 
-                                    <br><br>
+                                        The goal of this project was to stand the pole upright for as long as possible; a
+                                        traditional controls problem, but with the twist of using a Reinforcement Learning
+                                        approach. Through the use of OpenAI Gym's environment, I am given control of the cart.
+                                        The cart can move either left or right. My task was to determine, given a 4D vector
+                                        [Position, Velocity, Angle, Angular Velocity], the action that will maximize the
+                                        probability that the pole does not fall over, both in short and long term.
 
-                                    Below you can access my Github Repo and the documentation for OpenAI Gym.
+                                        <br><br>
 
-                                    <br><br>
+                                        Below you can access my Github Repo and the documentation for OpenAI Gym.
 
-                                    <a href = "https://github.com/MichaelNasello/CartPole_Balance" target = "_blank">
-                                        <button class = "btn btn-secondary">
-                                            GitHub Repository
-                                        </button>
-                                    </a>
+                                        <br><br>
 
-                                    <br id = "space3"><br id = "space4">
+                                        <a href = "https://github.com/MichaelNasello/CartPole_Balance" target = "_blank">
+                                            <button class = "btn btn-secondary">
+                                                GitHub Repository
+                                            </button>
+                                        </a>
 
-                                    <a href = "https://gym.openai.com/" target = "_blank">
-                                        <button class = "btn btn-secondary">
-                                            Open AI
-                                        </button>
-                                    </a>
+                                        <br id = "space3"><br id = "space4">
 
-                                    <div style = "height: 10px" id = "spacer2"></div>
+                                        <a href = "https://gym.openai.com/" target = "_blank">
+                                            <button class = "btn btn-secondary">
+                                                Open AI
+                                            </button>
+                                        </a>
 
-                                </p>
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="images/website-v1.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Personal Website v1</h5>
-                                <p class="card-text">
-                                    I developed a webpage written in virtually only HTML and CSS. No framework was used
-                                    to help with the design of the page.
+                        <div class="col-lg-8">
+                            <div class="card card-block">
 
-                                    <br><br>
+                                <img src="images/website-v1.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Personal Website v1</h5>
+                                    <p class="card-text">
+                                        I developed a webpage written in virtually only HTML and CSS. No framework was used
+                                        to help with the design of the page.
 
-                                    The website is still available via the link below.
+                                        <br><br>
 
-                                    <br><br>
+                                        The website is still available via the link below.
 
-                                    <a href = "http://michaelnasello-old-website.ca.s3-website.ca-central-1.amazonaws.com/home" target = "_blank">
-                                        <button class = "btn btn-secondary">
-                                            Open AI
-                                        </button>
-                                    </a>
+                                        <br><br>
 
-                                    <div style = "height: 75px" id = "spacer"></div>
+                                        <a href = "http://michaelnasello-old-website.ca.s3-website.ca-central-1.amazonaws.com/home" target = "_blank">
+                                            <button class = "btn btn-secondary">
+                                                Website v1
+                                            </button>
+                                        </a>
 
-                                </p>
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4" style = "margin: 0 auto; float: none; margin-bottom: 10px;">
-                        <div class="card">
-                            <img src="images/cornerstone-project.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Mechatronics Cornerstone Project</h5>
-                                <p class="card-text">
-                                    This was a first-year, first-term design project for all Mechatronics Engineering
-                                    students at the University of Waterloo. It was an open-ended project. We were given
-                                    a lego set and an EV3 controller. Monitoring/defending personal space was the task
-                                    we chose.
+                        <div class="col-lg-8">
+                            <div class="card card-block">
 
-                                    <br><br>
+                                <img src="images/cornerstone-project.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mechatronics Cornerstone Project</h5>
+                                    <p class="card-text">
+                                        This was a first-year, first-term design project for all Mechatronics Engineering
+                                        students at the University of Waterloo. It was an open-ended project. We were given
+                                        a lego set and an EV3 controller. Monitoring/defending personal space was the task
+                                        we chose.
 
-                                    The final product surveyed an area and fired projectiles at approaching
-                                    objects. Chassis composed of lego; source code written in RobotC. During the closing
-                                    phase of the project, we produced a final report that summarized project scope,
-                                    constraints and criteria, mechanical and software design and methods of testing.
-                                </p>
+                                        <br><br>
+
+                                        The final product surveyed an area and fired projectiles at approaching
+                                        objects. Chassis composed of lego; source code written in RobotC. During the closing
+                                        phase of the project, we produced a final report that summarized project scope,
+                                        constraints and criteria, mechanical and software design and methods of testing.
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
+
+                <br>
 
                 <h3 id = "featured-work" class = "font-weight-light">Featured Work</h3>
                 <hr>
