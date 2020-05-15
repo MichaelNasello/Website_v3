@@ -409,9 +409,7 @@
     <div class = "container" id = "body-id">
 
         <div class = "card border-0 shadow my-5">
-            <div id = "about-me" class = "card-body p-5">
-
-
+            <div class = "card-body p-5">
 
                 <div class="container" id = "jumbo">
                     <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://placeimg.com/1000/480/nature)">
@@ -441,7 +439,7 @@
 
                 <br>
 
-                <h3 class = "font-weight-light" style = "padding: 0px">About Me</h3>
+                <h3 id = "about-me" class = "font-weight-light" style = "padding: 0px">About Me</h3>
                 <hr>
                 <p>
                     I am an individual with a passion for learning. To me, nothing is more exciting than struggling
@@ -786,7 +784,7 @@
                         <div class="card-header" id="headingZero">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
-                                    Autonomous Mini Cart
+                                    Autonomous Mini Cart &nbsp<i class = "fa fa-arrow-down"></i>
                                 </button>
                             </h2>
                         </div>
@@ -822,11 +820,11 @@
                                 <hr>
 
                                 The Mini Cart chassis was purchased online. It holds the Pi, Pi-Camera, servo motors,
-                                wheels, two power banks, and a breadboard with a circuit supporting drive functionality.
+                                wheels, two power banks, and a breadboard circuit supporting drive functionality.
 
                                 <br><br>
 
-                                A custom camera mount was formed and installed on the front of the mini cart.
+                                A custom camera mount was built and installed on the front of the mini cart.
 
                                 <br><br>
 
@@ -848,15 +846,15 @@
                                 A simple CNN was implemented to generate predictions. One issue specific to this project
                                 was model size. It was impossible to load the original model (~400MB) into memory on the
                                 Raspberry Pi; this is a common problem for ML 'at the edge'. Several steps were taken to
-                                reduce the model size to ~10MB. The model was quantized to use float16 precision (from
-                                float32). In addition, the model was further compressed using
+                                reduce the model size to ~2MB. The model was quantized to use float16 precision (from
+                                float32). The model was further compressed using
                                 <a href = "https://www.tensorflow.org/lite" target = "_blank" style = "color: black">Tensorflow Lite</a>.
 
                                 <br><br>
 
                                 In addition, images from the dataset were resized to 256 by 256 images (from 512 by 512).
                                 This decreased the size of convolution layer outputs and number of parameters in dense
-                                ayers later in the network.
+                                layers later in the network.
 
                                 I created my own dataset, gathering approximately 400 images of myself pointing in
                                 various directions. There was a 80 / 20 percent split of training and validation images,
@@ -887,7 +885,7 @@
                         <div class="card-header" id="headingOne">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Reinforcement Learning with CartPole
+                                    Reinforcement Learning with CartPole &nbsp<i class = "fa fa-arrow-down"></i>
                                 </button>
                             </h2>
                         </div>
@@ -1060,7 +1058,7 @@
                         <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Handwritten Digit Classifier
+                                    Handwritten Digit Classifier &nbsp<i class = "fa fa-arrow-down"></i>
                                 </button>
                             </h2>
                         </div>
@@ -1167,7 +1165,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <ul class="social-icons">
                                     <li><a title = "LinkedIn" class="linkedin" href="https://www.linkedin.com/in/michael-nasello" target = "_blank"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a title = "GitHub" lass="facebook" href="https://github.com/MichaelNasello" target = "_blank"><i class="fa fa-github"></i></a></li>
+                                    <li><a title = "GitHub" class="facebook" href="https://github.com/MichaelNasello" target = "_blank"><i class="fa fa-github"></i></a></li>
                                     <li><a title = "Email" class="twitter" href="mailto:mlnasell@uwaterloo.ca"><i class="fa fa-at"></i></a></li>
                                     <li><a title = "Resume" class="dribbble" href="https://drive.google.com/open?id=1oScBNeyEuKXIX5FqIq0hdXf17sW3vygC" target = "_blank"><i class="fa fa-file"></i></a></li>
                                 </ul>
