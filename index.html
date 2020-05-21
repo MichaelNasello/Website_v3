@@ -214,7 +214,17 @@
             border-radius: 20px;
         }
 
+        #collapseZero img{
+            width: 400px;
+            margin: 30px
+        }
+
         @media (max-width:767px) {
+
+            #collapseZero img {
+                width: 70%;
+                margin: 10px
+            }
 
             .site-footer {
                 padding-bottom:0
@@ -488,7 +498,7 @@
                         <p class="card-text"><small class="text-muted">January 2020 - April 2020 <i class = "fa fa-at"></i> Ottawa, ON</small></p>
 
                         During my time at the NRC, I worked on a project that uses Machine Learning to forecast sea
-                        ice presence in several large Canadian bodies of water. ML models incorporated
+                        ice presence in several large Canadian bodies of water. ML models incorporate
                         <a href = "https://arxiv.org/abs/1506.04214" target = "_blank">ConvLSTMs</a> and a
                         custom SIF-Net RNN architecture. For input, they take bitmaps of several environmental
                         conditions (e.g. precipitation, temperature, windspeed).
@@ -542,9 +552,9 @@
                          <p class="card-text"><small class="text-muted">April 2019 - August 2019 <i class = "fa fa-at"></i> Windsor, ON</small></p>
 
                         As a Machine Vision Support Engineer at Vista, I was responsible for developing Machine Learning
-                        solutions for projects where traditional methods of Machine Vision could not perform at the
-                        level required by the client. I worked on several projects during my co-op. I spent most of my
-                        time carrying an Object Detection project to completion.
+                        solutions for projects where traditional methods of Machine Vision could not perform at a
+                        level required by the client. I worked on several projects during my co-op. I spent a
+                        majority of my time carrying an Object Detection project to completion.
 
                         <br><br>
 
@@ -643,7 +653,7 @@
                                     <h5 class="card-title">Deployment of Sifnet ML Model</h5>
                                     <p class="card-text">
 
-                                        When working at the NRC, I was asked to develop a method by which end-users could
+                                        When working at the NRC, I was asked to develop a method by which end users could
                                         access final products. Ice presence forecasts needed to be generated daily
                                         and available for download. I pioneered and finished the complete deployment
                                         pipeline of the project.
@@ -792,11 +802,11 @@
                         <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
                             <div class="card-body" style = "background-color: #616D7E;  color: #fff">
 
-                                <h1>Autonomous Mini Cart</h1>
+                                <h2>Autonomous Mini Cart</h2>
 
                                 The Mini Cart is designed to follow directions without pre-programmed instructions.
                                 The end user can simply point in the desired direction of travel and the robot will
-                                react accordingly. Computer vision and Machine Learning are used to determine
+                                react accordingly. Computer Vision and Machine Learning are used to determine
                                 intended commands from instructor.
 
                                 <br><br>
@@ -812,14 +822,16 @@
                                 was used to install and manage essential Python packages, including Tensorflow, Numpy,
                                 Pillow, RPi.GPIO and Picamera.
 
+                                <br><br>
+
                                 <p style = "text-align: center">
-                                    <img src = "images/pi.jpg" style = "width: 500px; margin: 30px">
+                                    <img src = "images/pi.jpg">
                                 </p>
 
                                 <h3>Chassis</h3>
                                 <hr>
 
-                                The Mini Cart chassis was purchased online. It holds the Pi, Pi-Camera, servo motors,
+                                The Mini Cart chassis holds the Pi, Pi-Camera, servo motors,
                                 wheels, two power banks, and a breadboard circuit supporting drive functionality.
 
                                 <br><br>
@@ -828,9 +840,9 @@
 
                                 <br><br>
 
-                                <p style = "text-align: center">
-                                    <img src = "images/auto-robot1.jpg" style = "width: 400px; margin: 30px">
-                                    <img src = "images/auto-robot2.jpg" style = "width: 400px; margin: 30px">
+                                <p style = "text-align: center" class = "col">
+                                    <img src = "images/auto-robot1.jpg">
+                                    <img src = "images/auto-robot2.jpg">
                                 </p>
 
                                 The circuit was designed, using a L293DNE driver motor chip to provide the capability
@@ -865,15 +877,19 @@
 
                                 Below you can observe the progress of training...
 
+                                <br><br>
+
                                 <p style = "text-align: center">
-                                    <img src = "images/val_loss.png" style = "width: 400px; margin: 30px">
-                                    <img src = "images/val_sparse_categorical_accuracy.png" style = "width: 400px; margin: 30px">
+                                    <img src = "images/val_loss.png">
+                                    <img src = "images/val_sparse_categorical_accuracy.png">
                                 </p>
 
-                                <h3>Results</h3>
+                                <h3>Final Product</h3>
                                 <hr>
 
-                                A video displaying results will be included upon completion of project.
+                                <div id = "robot-vid" class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="videos/Autonomous-Robot.mp4"></iframe>
+                                </div>
 
                                 <br>
 
