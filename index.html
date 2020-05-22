@@ -358,10 +358,19 @@
         #home .nav-item:hover {
             background-color: #737373;
             border-radius: 5px;
+            transition: background-color .7s ease-in-out;
         }
 
-        #home .nav-link:hover{
+        #home .nav-link:hover {
             color:white
+        }
+
+        a, a:hover button:hover {
+            transition: background-color .7s ease-in-out;
+        }
+
+        .collapsing {
+            transition: height 2s;
         }
 
     </style>
@@ -439,6 +448,26 @@
     });
 </script>
 
+<script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("home");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+</script>
+
 <body>
 
     <div class = "container" id = "body-id">
@@ -447,7 +476,7 @@
             <div class = "card-body p-5">
 
                 <div class="container" id = "jumbo">
-                    <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(30,30,30,0.6) 0%,rgba(30,30,30,0.6) 100%), url(https://media.giphy.com/media/1pmatQ3LcP5XFYxSWF/giphy.gif)">
+                    <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(30,30,30,0.6) 0%,rgba(30,30,30,0.8) 100%), url(https://media.giphy.com/media/1pmatQ3LcP5XFYxSWF/giphy.gif)">
                         <div class="container">
 
                             <h1 class="display-4">Michael Nasello</h1>
