@@ -362,3 +362,7 @@ a, a:hover button:hover {
     font-size: 10px;
     width: 100%;
 }
+
+#fix:hover {
+    text-decoration: none;
+}
