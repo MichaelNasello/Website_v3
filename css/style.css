@@ -334,13 +334,14 @@ img {
 }
 
 #home .nav-item:hover {
-    background-color: #737373;
+    background-color: #6c757d;
     border-radius: 5px;
     transition: background-color .7s ease-in-out;
 }
 
 #home .nav-link:hover {
-    color:white
+    color:white;
+    transition: color .7s ease-in-out;
 }
 
 a, a:hover button:hover {
@@ -348,7 +349,7 @@ a, a:hover button:hover {
 }
 
 .collapsing {
-    transition: height 2s;
+    transition: height 1.5s;
 }
 
 .social-icons a:hover {
@@ -365,4 +366,12 @@ a, a:hover button:hover {
 
 #fix:hover {
     text-decoration: none;
+}
+
+#pills-nrc-tab:hover, #pills-vista-tab:hover {
+    background-color: #eee;
+}
+
+#pills-nrc-tab {
+    margin-right: 10px;
 }
