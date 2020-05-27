@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handwritten Digit Recognition</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="images/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4991e1abeb.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+            background-color: white;
+        }
+        h2{
+            display: block;
+            margin: auto;
+            text-align: center;
+            padding: .8rem ;
+        }
+        p{
+            text-align: center;
+        }
+        head{
+            height: 80vh;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.5;
+            background: #3498DB;
+        }
+        i{
+            padding: .5rem 0;
+        }
+        .btn {
+            display: inline-block;
+            border-radius: 8px;
+            border: none;
+            background: #333;
+            color: white;
+            margin: auto;
+            margin-bottom: 1rem;
+            padding: .4rem .7rem;
+
+        }
+        .container:first-child{
+            margin-top: 3rem;
+            border-radius: 15px 15px 0 0;
+        }
+        .container:last-child{
+            margin-top: 3rem;
+            border-radius: 0 15px;
+        }
+        .container-main{
+            display: grid;
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 2rem;
+            overflow: hidden;
+            grid-template-columns: 1fr 1fr;
+            height: 72vh;
+        }
+        .bordered{
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #predicted{
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class = "container">
+        <h2>Problem</h2>
+        <p>The goal is to correctly classify a single handwritten digit given an arbitrary image.
+        To test out the performance of my model, you can draw a number in the canvas below. To make
+        a prediction, an image of your drawing will be saved and pushed through the model. When your
+        done, hit <b>Clear</b> to retry.
+        </p>
+
+    </div>
+
+        <div class="container container-main">
+            <div id="paint" class="bordered">
+                <canvas id="myCanvas" class="bordered" style = "background-color: white"></canvas>
+            </div>
+
+            <div id="predicted" >
+                Prediction <i class="fas fa-chevron-down"></i>&nbsp;&nbsp; <div id="number" class="bordered">
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div>
+           <button class = "btn" id = "clear">Clear</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+          $('#paint').css({'width': '250px'});
+          $('#number').css({'width': '100px', 'height': '70px', 'font-size': '60px'});
+          $('#clear').css({'font-size': '25px'});
+        } else {
+          $('#paint').css({'width': '300px'});
+          $('#number').css({'width': '150px', 'font-size': '95px'});
+          $('#clear').css({'font-size': '25px'});
+        }
+
+        var cw = $('#paint').width();
+        $('#paint').css({'height': cw + 'px'});
+
+        cw = $('#number').width();
+        $('#number').css({'height': cw + 'px'});
+
+        // From https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var compuetedStyle = getComputedStyle(document.getElementById('paint'));
+        canvas.width = parseInt(compuetedStyle.getPropertyValue('width'));
+        canvas.height = parseInt(compuetedStyle.getPropertyValue('height'));
+
+        var mouse = {x: 0, y: 0};
+
+        canvas.addEventListener('mousemove', function(e) {
+          mouse.x = e.pageX - this.offsetLeft;
+          mouse.y = e.pageY - this.offsetTop;
+        }, false);
+
+        var touch = {x: 0, y: 0};
+
+        canvas.addEventListener('touchmove', function(e) {
+          touch.x = e.pageX - this.offsetLeft;
+          touch.y = e.pageY - this.offsetTop;
+        }, false);
+
+        context.lineWidth = isMobile ? 9 : 9;
+        context.lineJoin = 'round';
+        context.lineCap = 'round';
+        context.strokeStyle = '#0000FF';
+
+        canvas.addEventListener('mousedown', function(e) {
+          context.moveTo(mouse.x, mouse.y);
+          context.beginPath();
+          canvas.addEventListener('mousemove', onPaint, false);
+        }, false);
+
+        canvas.addEventListener('mouseup', function() {
+          canvas.removeEventListener('mousemove', onPaint, false);
+          var img = new Image();
+          img.onload = function() {
+            context.drawImage(img, 0, 0, 28, 28);
+            data = context.getImageData(0, 0, 28, 28).data;
+            var input = [];
+            for(var i = 0; i < data.length; i += 4) {
+              input.push(data[i + 2] / 255);
+            }
+            predict(input);
+          };
+          img.src = canvas.toDataURL('image/png');
+        }, false);
+
+        // Set up touch events for mobile, etc
+        canvas.addEventListener('touchstart', function (e) {
+          var touch = e.touches[0];
+          canvas.dispatchEvent(new MouseEvent('mousedown', {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          }));
+        }, false);
+        canvas.addEventListener('touchend', function (e) {
+          canvas.dispatchEvent(new MouseEvent('mouseup', {}));
+        }, false);
+        canvas.addEventListener('touchmove', function (e) {
+          var touch = e.touches[0];
+          canvas.dispatchEvent(new MouseEvent('mousemove', {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          }));
+        }, false);
+
+        // Prevent scrolling when touching the canvas
+        canvas.addEventListener("touchstart", function (e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        canvas.addEventListener("touchend", function (e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+        canvas.addEventListener("touchmove", function (e) {
+          if (e.target == canvas) {
+            e.preventDefault();
+          }
+        }, false);
+
+        var onPaint = function() {
+            if (isMobile){
+                context.lineTo(touch.x, touch.y);
+                context.stroke();
+            }
+            else{
+                context.lineTo(mouse.x, mouse.y);
+                context.stroke();
+            }
+        };
+
+        tf.loadLayersModel('digit_recognition_model/model.json').then(function(model) {
+          window.model = model;
+        });
+
+        var predict = function(input) {
+          if (window.model) {
+            window.model.predict([tf.tensor(input).reshape([1, 28, 28, 1])]).array().then(function(scores){
+              scores = scores[0];
+              predicted = scores.indexOf(Math.max(...scores));
+              $('#number').html(predicted);
+            });
+          } else {
+            // The model takes a bit to load, if we are too fast, wait
+            setTimeout(function(){predict(input)}, 50);
+          }
+        }
+
+        $('#clear').click(function(){
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          $('#number').html('');
+        });
+    </script>
+
+
+</body>
+</html>
