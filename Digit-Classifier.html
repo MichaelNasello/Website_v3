@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Handwritten Digit Recognition</title>
+    <title>Handwritten Digit Classifier</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="icon" href="images/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&family=Sanchez&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4991e1abeb.js" crossorigin="anonymous"></script>
 
 
@@ -17,119 +17,137 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .container{
-            display: grid;
-            justify-content: center;
-            align-items: center;
+
+        body {
+            font-family: 'Sanchez', serif;
+            line-height: 1.5;
+            background: url('images/classifier-background.jpg');
             text-align: center;
-            max-width: 1100px;
+        }
+        p{
+            padding-bottom: 2rem;
+        }
+        h2{
+            padding: 1rem 1rem;
+            font-family: 'Sanchez', serif;
+        }
+        .container{
+            max-width: 900px;
             margin: auto;
             padding: 0 2rem;
             overflow: hidden;
             background-color: white;
+            height: 90vh;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            border-radius: 15px;
         }
-        h2{
-            display: block;
-            margin: auto;
-            text-align: center;
-            padding: .8rem ;
-        }
-        p{
-            text-align: center;
-        }
-        head{
-            height: 80vh;
-        }
-        body {
-            font-family: 'Nunito', sans-serif;
-            line-height: 1.5;
-            background: #3498DB;
-        }
-        i{
-            padding: .5rem 0;
-        }
-        .btn {
-            display: inline-block;
-            border-radius: 8px;
-            border: none;
-            background: #333;
-            color: white;
-            margin: auto;
-            margin-bottom: 1rem;
-            padding: .4rem .7rem;
-
-        }
-        .container:first-child{
-            margin-top: 3rem;
-            border-radius: 15px 15px 0 0;
-        }
-        .container:last-child{
-            margin-top: 3rem;
-            border-radius: 0 15px;
-        }
-        .container-main{
+        .grid{
             display: grid;
-            max-width: 1100px;
-            margin: auto;
-            padding: 2rem 2rem;
-            overflow: hidden;
-            grid-template-columns: 1fr 1fr;
-            height: 72vh;
+            grid-gap: 1rem;
         }
-        .bordered{
+        #paint{
             margin: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-family: 'Sanchez', serif;
         }
         #predicted{
-            font-size: 1.3rem;
-            text-align: center;
+            margin: auto;
+            padding: .6rem;
+            font-family: 'Sanchez', serif;
+        }
+        .btn{
+            display: inline-block;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 2rem;
+            border-radius: 5px;
+            border: none;
+            font-size: .8rem;
+            background: #555;
+            color: white;
+            padding: .5rem 1.5rem;
+            font-family: 'Sanchez', serif;
+        }
+        .btn:hover{
+            opacity: .9;
+            color: white
         }
 
+        .bordered{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+            margin-top: .6rem;
+        }
+    /*    media queries*/
+    /*    normal phone screen*/
+        @media(max-width: 768px){
+            .item{
+                width: 100%;
+            }
+            .container{
+                height: 150vh;
+            }
+            #number{
+                margin: auto;
+                margin-top: .6rem;
+            }
 
+        }
+        /*small phone*/
+        @media(max-width: 320px){
+            .item{
+                width: 100%;
+            }
+            .container{
+                height: 180vh;
+            }
+            #number{
+                margin: auto;
+                margin-top: .6rem;
+            }
 
-
-
-
+        }
 
     </style>
 </head>
 <body>
 
-
-    <div class = "container">
-        <h2>Problem</h2>
-        <p>The goal is to correctly classify a single handwritten digit given an arbitrary image.
-        To test out the performance of my model, you can draw a number in the canvas below. To make
-        a prediction, an image of your drawing will be saved and pushed through the model. When your
-        done, hit <b>Clear</b> to retry.
-        </p>
-
-    </div>
-
-        <div class="container container-main">
-            <div id="paint" class="bordered">
-                <canvas id="myCanvas" class="bordered" style = "background-color: white"></canvas>
-            </div>
-
-            <div id="predicted" >
-                Prediction <i class="fas fa-chevron-down"></i>&nbsp;&nbsp; <div id="number" class="bordered">
-            </div>
-
-        </div>
-    </div>
     <div class="container">
-        <div>
-           <button class = "btn" id = "clear">Clear</button>
+<!--    Title-->
+        <div class = "title">
+            <h2>Handwritten Digit Classifier</h2>
+            <p>The goal is to correctly classify a single handwritten digit given an arbitrary image.
+            To test out the performance of my model, you can draw a number in the canvas below. To make
+            a prediction, an image of your drawing will be saved and pushed through the model. When your
+            done, hit <b>Clear</b> to retry.
+            </p>
         </div>
+<!--    Body-->
+
+        <div class="grid">
+            <div id="paint" class="item ">
+                Draw a number <i class="fas fa-pencil-alt"></i><canvas id="myCanvas" class="bordered" style =
+                    "background-color: white"></canvas>
+            </div>
+
+            <div id="clear" class="item">
+                <button class = "btn">Clear</button>
+            </div>
+
+            <br>
+
+            <div id="predicted" class="item " >
+                Prediction <i class="fas fa-hand-point-down"></i>&nbsp;&nbsp;<div id="number" class="bordered">
+            </div>
+        </div>
+
     </div>
-
-
 
     <script>
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
