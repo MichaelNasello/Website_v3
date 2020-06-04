@@ -349,7 +349,7 @@ a, a:hover button:hover {
 }
 
 .collapsing {
-    transition: height 1.5s;
+    transition: height 0.5s;
 }
 
 .social-icons a:hover {
@@ -374,4 +374,28 @@ a, a:hover button:hover {
 
 #pills-nrc-tab {
     margin-right: 10px;
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.animate-pop-in {
+    animation: pop-in .6s cubic-bezier(0, .9, .3, 1.2) forwards;
+    opacity: 0;
+}
+
+.pop-title{
+    animation-delay: 0.4s;
+}
+
+.pop-secondary{
+    animation-delay: 0.7s;
 }
