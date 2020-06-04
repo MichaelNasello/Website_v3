@@ -379,25 +379,23 @@ a, a:hover button:hover {
 @keyframes pop-in {
     0% {
         opacity: 0;
-        transform: translateY(-4rem) scale(.8);
     }
     100% {
         opacity: 1;
-        transform: none;
     }
 }
 
 .animate-pop-in {
-    animation: pop-in .6s cubic-bezier(0, .9, .3, 1.2) forwards;
+    animation: pop-in 3s forwards;
     opacity: 0;
 }
 
 .pop-title{
-    animation-delay: 0.4s;
+    animation-delay: 0.7s;
 }
 
 .pop-secondary{
-    animation-delay: 0.7s;
+    animation-delay: 1.5s;
 }
 
 img:hover {
