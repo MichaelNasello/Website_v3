@@ -333,7 +333,7 @@ img {
     overflow-x: scroll !important;
 }
 
-#home .nav-item:hover {
+/*#home .nav-item:hover {
     background-color: #6c757d;
     border-radius: 5px;
     transition: background-color .7s ease-in-out;
@@ -342,6 +342,23 @@ img {
 #home .nav-link:hover {
     color:white;
     transition: color .7s ease-in-out;
+}*/
+
+#home .nav-item {
+    margin-left: 3px;
+}
+
+#home .nav-link:hover {
+    border-bottom: 2px solid lightgrey;
+    transition: border-bottom-height 10s;
+}
+
+#home .active {
+    border-bottom: 2px solid deepskyblue;
+}
+
+#home .active:hover {
+    border-bottom: 0px;
 }
 
 a, a:hover button:hover {
@@ -419,3 +436,5 @@ img:hover {
 		opacity: 1;
 	}
 }
+
+.fa-arrow-down 
