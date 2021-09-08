@@ -385,11 +385,11 @@ a, a:hover button:hover {
     text-decoration: none;
 }
 
-#pills-abr-tab:hover, #pills-nrc-tab:hover, #pills-vista-tab:hover {
+#pills-vector-tab:hover, #pills-abr-tab:hover, #pills-nrc-tab:hover, #pills-vista-tab:hover {
     background-color: #eee;
 }
 
-#pills-abr-tab, #pills-nrc-tab {
+#pills-vector-tab, #pills-abr-tab, #pills-nrc-tab {
     margin-right: 10px;
 }
 
