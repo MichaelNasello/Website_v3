@@ -127,8 +127,7 @@
 
                             <h1 class="display-4 animate-pop-in pop-title">Michael Nasello</h1>
                             <p class="lead animate-pop-in pop-secondary">
-                                Data Scientist @ Deloitte - Omnia AI (Winter '22). Incoming Data Scientist @ Intact
-                                (Summer '22).
+                                Incoming Data Scientist @ Intact
                             </p>
                             <hr class="my-4 animate-pop-in icon-title" style = "border-color: white">
 
@@ -207,7 +206,10 @@
                 <ul class = "nav nav-pills mb-3 animate-pop-in pop-secondary" id = "pills-tab" role = "tablist">
 
                     <li class = "nav-item">
-                        <a class = "nav-link active" id = "pills-vector-tab" data-toggle = "pill" href = "#pills-vector" role = "tab" aria-controls = "pills-vector" aria-selected = "true">Vector Institute</a>
+                        <a class = "nav-link active" id = "pills-deloitte-tab" data-toggle = "pill" href = "#pills-deloitte" role = "tab" aria-controls = "pills-deloitte" aria-selected = "true">Deloitte</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" id = "pills-vector-tab" data-toggle = "pill" href = "#pills-vector" role = "tab" aria-controls = "pills-vector" aria-selected = "false">Vector Institute</a>
                     </li>
                     <li class = "nav-item">
                         <a class = "nav-link" id = "pills-abr-tab" data-toggle = "pill" href = "#pills-abr" role = "tab" aria-controls = "pills-abr" aria-selected = "false">Applied Brain Research</a>
@@ -222,7 +224,60 @@
                 </ul>
                 <div class="tab-content animate-pop-in pop-secondary" id="pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="pills-vector" role="tabpanel" aria-labelledby="pills-vector">
+                    <div class="tab-pane fade show active" id="pills-deloitte" role="tabpanel" aria-labelledby="pills-deloitte">
+
+                        <br>
+
+                        <h4>Data Scientist<img id = "canada-flag-default" style = "width: 50px; margin-left: 30px" src = "images/deloitte-logo.jpeg"> </h4>
+
+                        <img id = "canada-flag" style = "width: 50px" src = "images/deloitte-logo.jpeg">
+
+                        <p class="card-text"><small class="text-muted">January 2022 - April 2022 <i class = "fa fa-at"></i> Toronto, ON</small></p>
+
+                        <strong>Employer Evaluation: OUTSTANDING</strong>
+
+                        <br><br>
+
+                        During my time at Omnia, Deloitte’s AI practice, I developed both technical and consulting
+                        skills while working across sectors, clients, and types of work. Outside of technical work, I
+                        contributed to Work Proposals, Statement-of-Works, and client-facing presentations.
+
+                        <br><br>
+
+                        A notable project I joined served one of Deloitte’s large public sector clients. This client
+                        maintains a public-facing inbox, with daily volumes sometimes reaching 1000 emails. My team
+                        recommended they leverage AI to relieve the stress of doing so manually. I built a
+                        proof-of-concept to illustrate how we could, at scale, identify high-quality sources of
+                        information to answer questions.
+
+                        <br><br>
+
+                        My approach was two-fold. Provided a question, perform a search of all ~5000 pages belonging to
+                        the client’s website. A question-answer language model projects both the user query and all
+                        text, scraped and cleaned, into a dense vector space for semantic search. All pages are ranked
+                        based on cosine similarity and strong matches to the question are returned. With this approach,
+                        the user is directed to potential answers before hitting send, and the client is saved a
+                        correspondence.
+
+                        <br><br>
+
+                        When the above approach fails, and the unanswered question arrives at the inbox, a search of all
+                        past correspondences is executed. Our hypothesis is: for past questions that are semantically
+                        similar, their responses contain valuable information and provide a templated response. We
+                        leverage a question-answer language model to generate embeddings of the query and all past
+                        emails. Since the search space is large, we filter the field of candidates via a k-means
+                        clustering algorithm. It then becomes feasible to rank the remaining candidates, via cosine
+                        similarity, and present the results.
+
+                        <br><br>
+
+                        This system has the ability to greatly lessen the burden of maintaining the client’s inbox by
+                        reducing the number of correspondences received, automatically identifying relevant information,
+                        and drafting template responses.
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-vector" role="tabpanel" aria-labelledby="pills-vector">
 
                         <br>
 
@@ -262,7 +317,7 @@
 
                         <br><br>
 
-                        This work is open-sourced. Links are be available to view code and the tool in action.
+                        This work is open-sourced. Links are available to view the code and tool in action.
 
                         <br><br>
 
