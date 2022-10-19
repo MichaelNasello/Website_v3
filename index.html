@@ -206,7 +206,10 @@
                 <ul class = "nav nav-pills mb-3 animate-pop-in pop-secondary" id = "pills-tab" role = "tablist">
 
                     <li class = "nav-item">
-                        <a class = "nav-link active" id = "pills-deloitte-tab" data-toggle = "pill" href = "#pills-deloitte" role = "tab" aria-controls = "pills-deloitte" aria-selected = "true">Deloitte</a>
+                        <a class = "nav-link active" id = "pills-intact-tab" data-toggle = "pill" href = "#pills-intact" role = "tab" aria-controls = "pills-intact" aria-selected = "true">Intact</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" id = "pills-deloitte-tab" data-toggle = "pill" href = "#pills-deloitte" role = "tab" aria-controls = "pills-deloitte" aria-selected = "false">Deloitte</a>
                     </li>
                     <li class = "nav-item">
                         <a class = "nav-link" id = "pills-vector-tab" data-toggle = "pill" href = "#pills-vector" role = "tab" aria-controls = "pills-vector" aria-selected = "false">Vector Institute</a>
@@ -224,7 +227,53 @@
                 </ul>
                 <div class="tab-content animate-pop-in pop-secondary" id="pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="pills-deloitte" role="tabpanel" aria-labelledby="pills-deloitte">
+                    <div class="tab-pane fade show active" id="pills-intact" role="tabpanel" aria-labelledby="pills-intact">
+
+                        <br>
+
+                        <h4>Data Scientist<img id = "canada-flag-default" style = "width: 50px; margin-left: 30px" src = "images/intact-logo.jpeg"> </h4>
+
+                        <img id = "canada-flag" style = "width: 50px" src = "images/intact-logo.jpeg">
+
+                        <p class="card-text"><small class="text-muted">January 2022 - April 2022 <i class = "fa fa-at"></i> Toronto, ON</small></p>
+
+                        <strong>Employer Evaluation: OUTSTANDING</strong>
+
+                        <br><br>
+
+                        During my time at Intact’s Data Lab on the Speech Analytics Claims team, I worked on the first
+                        implementation of a Reason-of-Call model. This system, at scale, ingests recordings of
+                        conversations between customers and our Adjustors, transcribes the dialogue to text, and maps
+                        the text to one of many Reason-of-Call labels characterizing the primary purpose of the call.
+
+                        <br><br>
+
+                        By understanding the purpose of calls along with other key statistics and trends at our
+                        call-centers, we can identify and remove pain points to reduce the time our Adjustors spend on
+                        the phone. Our business team projects this will lead to an estimated 2 million dollars in
+                        reduced operational expenses over the next three years.
+
+                        <br><br>
+
+                        My specific contributions range from data and modelling experiments to the implementation of
+                        Data Science best-practices to the ideation of business use-cases. I developed Active Learning
+                        strategies to make more efficient use of the limited access to annotators, tested several
+                        architectures of our RoBERTa model’s classification head, added K-fold Cross Validation to
+                        training scripts, performed hyper-parameter tuning, built a GUI that connects to MLflow for
+                        rapid model error analysis, etc.
+
+                        <br><br>
+
+                        In addition to the above work, one notable effort I led was the application of text
+                        augmentation to our data during oversampling. Text augmentation will change wording without
+                        obstructing the proper flow of speech nor changing the underlying message. This is done via
+                        back translation, where text is translated to another language and back, and random
+                        replacement, where words are masked and replaced by a mask-fill model at random. This work is
+                        now used by other teams in the Data Lab.
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-deloitte" role="tabpanel" aria-labelledby="pills-deloitte">
 
                         <br>
 
